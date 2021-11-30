@@ -1,0 +1,36 @@
+def check_name(applications):
+    tmp1 = applications.split(",")
+    if " " in tmp1[0]:
+        tmp1.replace(" ", "")
+        print(tmp1[0].lower(), ",", end=" ")
+    elif len(tmp1[0]) <= 5:
+        print(tmp1[0].lower(), "---", not tmp1[0], ",", end=" ")
+    else:
+        print(tmp1[0].lower(), ",", end=" ")
+    return ":)"
+def check_phone(applications):
+    tmp1 = applications.split(",")
+    tmp2 = tmp1[1]
+    if len(tmp1[1]) == 16:
+        print(tmp1[1], ",",  end=" ")
+    elif " " in tmp1[1] and len(tmp1[1]) > 16:
+        tmp1[1].replace(" ", "")
+        print(tmp1[1], ",", end=" ")
+    elif len(tmp1[1]) < 16 or tmp2[7] != 7 or tmp2[7] != 8:
+        print(tmp1[1], "---", not tmp1[1], ",", end=" ")
+    return ":)"
+def check_city(applications):
+    tmp1 = applications.split(",")
+    if " " in tmp1[2] or len(tmp1[2]) > 5:
+        tmp1[2].replace(" ", "")
+        print(tmp1[2].lower())
+    elif len(tmp1[2]) <= 5:
+        print(tmp1[2].lower(), "---", not tmp1[2])
+    return ":)"
+def main():
+    applications1 = ["name=Аня,phone=8800234 ,city=москва", "name=КОЛЯ,phone=8800900871 ,city=МОСКВА", "name=Валентина,phone=7950900871 ,city=волгоград", "name=,phone=8999901871,city=москва", "name=Иван,phone=7999901871,city=москва", "name=Инга,phone=,city=москва"]
+    for i in range(len(applications1)):
+        applications = applications1[i]
+        print(check_name(applications), check_phone(applications), check_city(applications))
+if __name__ == "__main__":
+    main()
