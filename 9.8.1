@@ -1,0 +1,20 @@
+#Конвертация валют!
+def rub_to_currency(rub_amount, currency):
+    print("Количество рублей", rub_amount, end=": ")
+    if currency == "USD" or currency == "usd" or not currency:
+        print(rub_to_usd(rub_amount))
+    elif currency == "CNY" or currency == "cny":
+        print(rub_to_cny(rub_amount))
+    elif type(currency) != str or currency != "CNY" or currency != "cny" or currency != "usd" or currency != "USD":
+        print("Расчет не может быть совершен")
+        return 0
+def rub_to_cny(rub_amount):
+    return rub_amount / 70.99 * 6.44
+def rub_to_usd(rub_amount):
+    return rub_amount / 70.99
+def main():
+    print("Введите количество рублей и сокращенное название валюты")
+    rub_amount = float(input())
+    currency = input()
+    return rub_to_currency(rub_amount, currency)
+print(main())
