@@ -1,0 +1,20 @@
+def extract_expression(expression):
+    tmp = expression.split("+")
+    expression2 = 0
+    result = 0
+    for i in tmp:
+        expression1 = 1
+        if "*" in i:
+            tmp1 = i.split("*")
+            tmp2 = [int(i) for i in tmp1]
+            for m in range(0, len(tmp2)):
+                expression1 *= tmp2[m]
+            result += expression1
+        else:
+            expression2 += int(i)
+    return expression2 + result
+def main():
+    expression = input()
+    print(extract_expression(expression))
+if __name__ == "__main__":
+    main()
