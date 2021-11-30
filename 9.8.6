@@ -1,0 +1,30 @@
+def count_scores(scores, upper_threshold, lower_threshold):
+    count2 = 0
+    count3 = 0
+    count4 = 0
+    count5 = 0
+    for j in scores:
+        if j == 2:
+            count2 += 1
+        elif j == 3:
+            count3 += 1
+        elif j == 4:
+            count4 += 1
+        elif j == 5:
+            count5 += 1
+    if ((count4 + count5) / (count2 + count3 + count4 + count5)) * 100 > upper_threshold:
+        print("Результативность отличная!")
+    elif ((count4 + count5) / (count2 + count3 + count4 + count5)) * 100 < lower_threshold:
+        print("Результативность плохая!")
+    else:
+        print("Результативность средняя!")
+    return ":)"
+def main():
+    scores1 = [[2, 4, 4, 5, 2, 3, 3, 1, 1], [3, 4, 2, 3, 3, 1, 5, 2, 4], [5, 3, 3, 4, 3, 2, 3, 5], [4, 2, 2, 4, 2], [4, 3, 3, 3, 3, 3, 3], [2, 1, 5, 3, 5, 5], [4, 4, 4, 4, 5, 5], [4, 1, 3, 4, 1, 1]]
+    upper_threshold = int(input("Введите верхний порог успеваемости класса"))
+    lower_threshold = int(input("Введите нижний порог успеваемости класса"))
+    for i in range(len(scores1)):
+        scores = scores1[i]
+        print(count_scores(scores, upper_threshold, lower_threshold))
+if __name__ == "__main__":
+    main()
