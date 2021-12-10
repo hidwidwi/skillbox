@@ -1,0 +1,14 @@
+transactions = [100, 98, 1000, 2500, 299, 1898, 1989, 2001, 50, 10, 70]
+max_1 = 0
+max_2 = 0
+count1 = 0
+count2 = 0
+for i in transactions:
+    count1 += 1
+    if i > max_1:
+        max_1 = i
+for j in transactions:
+    count2 += 1
+    if j > max_2 and j < max_1:
+        max_2 = j
+print(max_1, max_2, (count1 + count2))
