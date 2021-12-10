@@ -1,0 +1,16 @@
+power_2_numbers = [2**i for i in range(1, 201)]
+generated_set = {i**0 if i % 5 == 0 else i for i in range(8, 51)}
+power_2_numbers = set(power_2_numbers)
+new_set = power_2_numbers.symmetric_difference(generated_set)
+new_set1 = set(new_set1)
+for i in range(34, 121):
+    new_set1.add(i)
+new_set2 = new_set.intersection(new_set1)
+uni = []
+unicode_values = {}
+for i in new_set2:
+    uni = chr(i)
+    for j in uni:
+        unicode_values = {i : j}
+        print(unicode_values)
+    
