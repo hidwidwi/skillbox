@@ -1,0 +1,11 @@
+transactions = [-1000, -200, -90, -80, -78, -61, 200, -9, -31, 200, 600, -100, 1000]
+for i in range(0, len(transactions)):
+    for j in range(len(transactions) - 1):
+        if transactions[j] < transactions[j + 1]:
+            transactions[j], transactions[j + 1] = transactions[j + 1], transactions[j]
+for m in range(0, len(transactions)):
+    if transactions[m] > 0:
+        print(transactions[m])
+    elif transactions[0] < 0:
+        print(0)
+        break
