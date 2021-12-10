@@ -1,0 +1,14 @@
+coords = [(3, 2), (11, 2), (7, 10)]
+
+A = coords[0]
+B = coords[1]
+C = coords[2]
+i = zip(A, B)
+j = zip(A, C)
+lenght12 = [(x - y) ** 2 for x, y in i]
+lenght12_square = (sum(lenght12)) ** 0.5
+lenght13 = [(y - x) ** 2 for x, y in j]
+lenght13_square = (sum(lenght13) ** 0.5)
+pifagor = (lenght13_square ** 2 - lenght12_square ** 2) * 0.5
+space = lenght12_square * 0.5 * pifagor
+print(round(space, 1))
