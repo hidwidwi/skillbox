@@ -1,0 +1,11 @@
+document_text = 'There are the Food Courts in the cities that seats a lot of people and caters for every taste with dishes from all around the world. The aromatic smells that come from the Food Courts arc so delicious that your mouth will water. In recent years foreign foods have become a regular part of our life.'
+s = document_text.replace(".", " ").lower().split()
+def word_frequency(s):
+    words = {}
+    for i in range(0, len(s)):
+        item = s[i]
+        count = s.count(item)
+        words[item] = count
+    print(sorted(words.items(), key = lambda item : (item[1], item[0]), reverse=True))
+    return 0
+print(word_frequency(s))
