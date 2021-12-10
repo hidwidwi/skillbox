@@ -1,0 +1,65 @@
+tmp = []
+tmp1 = []
+tmp2 = set()
+tmp3 = []
+unique1 = dict()
+unique2 = dict()
+c_max = 0
+ids = ['1111:271', '1111:190', '1231:106', '1211:104', '1111:201', '1231:120', '1001:205', '1001:223', '1001:127', '1001:236', '1111:229', '1231:286', '1231:195', '1001:279', '1001:124', '1111:292', '1505:219', '1231:259', '1231:253', '1001:220', '1001:202', '1231:103', '1211:249', '1212:275']
+count = [111, 3, 13, 111, 9, 5, 17, 10, 13, 3, 16, 4, 16, 11, 18, 12, 14, 4, 3, 2, 14, 14, 10, 10]
+
+items_count = {i: j for i, j in zip(ids, count)}
+print(items_count)
+print(" ")
+
+for i in ids:
+    tmp = i
+    tmp1.append(tmp.split(":"))
+    for j in tmp1:
+        tmp2.add(j[0])
+print("Количество уникальных категорий:", len(tmp2))
+print(" ")
+
+for i in ids:
+    tmp = i
+    tmp1.append(tmp.split(":"))
+    break
+for j in tmp1:
+    tmp3.append(j[0])
+
+tmp3.pop(-1)
+
+for i in tmp3:
+    if i not in unique1:
+        unique1[i] = 0
+    unique1[i] += 1
+    tmp3 = set(tmp3)
+    tmp3 = list(tmp3)
+for i in tmp3:
+    print("Среднее количество уникальный товаров в категории", i, "-", unique1[i])
+
+for i in range(0, len(ids)):
+    if count[i] >= c_max:
+        c_max = count[i]
+        id_max = ids[i]
+        print("id товара с максимальным количеством на складе:", id_max)
+
+for i in ids:
+    tmp = i
+    tmp1.append(tmp.split(":"))
+    break
+for j in tmp1:
+    tmp3.append(j[0])
+
+tmp3.pop(-1)
+unique3 = {i: j for i, j in zip(tmp3, count)}
+
+
+for i in tmp3:
+    if i not in unique2:
+        unique2[i] = 0
+    unique2[i] += unique3.get(i)
+tmp3 = set(tmp3)
+tmp3 = list(tmp3)
+for item in tmp3:
+    print("Среднее количество единиц товаров в категории", item, "-", (unique2[item] / unique1[item]))
