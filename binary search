@@ -1,0 +1,17 @@
+my_list = [1, 2, 3, 4, 5, 6, 7, 8]
+key = 56
+begin = 0
+end = len(my_list) - 1
+found = False
+count = 0
+while end >= begin and not found:
+    count += 1
+    middle = (begin + end) // 2
+    item = my_list[middle]
+    if item == key:
+        found = True
+    if item > key:
+        end = middle - 1
+    else:
+        begin = middle + 1
+print(found, count)
