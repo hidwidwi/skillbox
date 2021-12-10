@@ -1,0 +1,9 @@
+user_scores = [1, 5, 5, 1, 5, 5, 5, 5, 4, 3, 5, 5]
+for i in range(len(user_scores)):
+    key = user_scores[i]
+    begin = i
+    while begin > 0 and user_scores[begin - 1] >= key:
+        user_scores[begin] = user_scores[begin - 1]
+        begin -= 1
+        user_scores[begin] = key
+print(user_scores)
