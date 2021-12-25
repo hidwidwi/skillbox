@@ -1,0 +1,43 @@
+list1 = []
+list3 = []
+list2 = []
+list4 = []
+c = 0
+Max = 0
+dictionary = dict()
+dictionary1 = []
+letter = []
+f = open("1.txt", mode="r", encoding="utf-8-sig")
+a = f.readlines()
+for i in a:
+    b = i.split(" ")
+    for j in b:
+        list1.append(j)
+list1 = [line.rstrip() for line in list1]
+
+for i in range(0, len(list1)):
+    if i % 2 != 0:
+        for j in list1[i]:
+            list2.append(j[0])
+            break
+    elif i % 2 == 0:
+        list3.append(list1[i])
+for i in list3:
+    i = int(i)
+    list4.append(i)
+dictionary = {i : j for i, j in zip(list4, list2)}
+dictionary1 = (sorted(dictionary.items()))
+print(dictionary1)
+list1 = []
+list2 = []
+for j in dictionary1:
+    list1.append(j[0])
+    list2.append(j[1])
+print(list1, list2)
+for i in range(len(list2)):
+    if list2[i] == list2[i]:
+        c = c + list1[i]
+        letter.append(list2[i])
+        print(letter, Max)
+    else:
+        c = 0
